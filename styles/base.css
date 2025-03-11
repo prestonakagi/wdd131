@@ -50,7 +50,7 @@ nav a:hover {
 }
 
 main {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto; /* Center main horizontally */
     display: grid;
     grid-template-columns: 2fr 1fr;

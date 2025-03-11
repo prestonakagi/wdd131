@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@350&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/base.css">
+        <script src="scripts/getdates.js" defer></script>
     </head>
     <body>
         <header>
@@ -36,19 +37,20 @@
             <section class="card right-card">
                 <h2>Web Dev Resources</h2>
                 <!-- Can not have li elements within section! Try just a elements. -->
-                <ul>
-                    <li><a href="" target="_blank">Link 1</a></li>
-                    <li><a href="" target="_blank">Link 2</a></li>
-                    <li><a href="" target="_blank">Link 3</a></li>
-                    <li><a href="" target="_blank">Link 4</a></li>
-                    <li><a href="" target="_blank">Link 5</a></li>
-                    <li><a href="" target="_blank">Link 6</a></li>
-                </ul>
+                <div class="link-list">
+                    <a href="" target="_blank">Link 1</a>
+                    <a href="" target="_blank">Link 2</a>
+                    <a href="" target="_blank">Link 3</a>
+                    <a href="" target="_blank">Link 4</a>
+                    <a href="" target="_blank">Link 5</a>
+                    <a href="" target="_blank">Link 6</a>
+                </div>
             </section>
         </main>
         <footer>
-            <p>©️<span id="currentyear"></span> 🏀 Preston Akagi 🏀 Utah</p>
-            <p id="lastModified"></p>
+            <!-- change text by Javascript -->
+            <p>©️<span id="currentyear">Year</span> 🏀 Preston Akagi 🏀 Utah</p>
+            <p>Last Modification: <span id="lastModified">last</span></p>
         </footer>
     </body>
 </html>

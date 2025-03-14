@@ -13,6 +13,10 @@ input.focus();
 button.addEventListener('click', function() {
     // if input textbox not blank
     if (input.value.trim() !== "") {
+        // This adds multiple li elements but code for delete button and .focus() below does not work.
+        // const li = document.createElement("li");
+        // const buttonDelete = document.createElement("button");
+
         // populate the li element variable's textContent 
         // (or innerHTML if need to include HTML tags too) with the input value.
         li.textContent = input.value;

@@ -1,0 +1,87 @@
+/* For hamburger menu */
+#menu {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 0.75 rem;
+    
+}
+
+#menu::before {
+    content: "=";  /* U+2630 or \u2630 */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.show li { /* JavaScript will make the show class */
+    display: block;
+}
+
+#menu.show::before {
+    content: "X";
+}
+
+
+nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    /* different background color (and text color) or border (different colored) */
+}
+
+main {
+    max-width: 800px; /* 800px was in the example */
+    /* automatically center on the screen horizontally */
+    margin: 0 auto;
+    display: grid;
+    /* in mobile view */
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px repeat(9, 1fr);
+    grid-gap: 20px;
+    place-items: center;
+}
+
+h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.fig1 {
+    grid-row: 2 / 3;
+}
+
+.fig2 {
+    grid-row: 3 / 4;
+}
+
+.fig3 {
+    grid-row: 4 / 5;
+}
+
+.fig4 {
+    grid-row: 5 / 6;
+}
+
+.fig5 {
+    grid-row: 6 / 7;
+}
+
+.fig6 {
+    grid-row: 7 / 8;
+}
+
+.fig7 {
+    grid-row: 8 / 9;
+}
+
+.fig8 {
+    grid-row: 9 / 10;
+}
+
+.fig9 {
+    grid-row: 10 / 11;
+}

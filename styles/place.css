@@ -30,3 +30,8 @@ figcaption, p {
     color: black;
     /* padding: 10px; */
 }
+
+.weather-icon {
+    width: 100px;
+    height: auto;
+}

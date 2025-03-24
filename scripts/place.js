@@ -30,3 +30,20 @@ lastMod.innerText = document.lastModified;
 // temp <= 10 C and wind speed > 4.8 km/h
 // if not met: display "N/A"
 
+//  T_wc = 13.12 + 0.6215 * T_a * (0.3965 * T_a - 11.37) * v^0.16  for celsius and wind speed km/h
+
+const airTemp = 7; // Celsius
+const windSpeed = 6; // km/h
+
+const calculateWindChill = (airTemp, windSpeed) => (13.12 + (0.6215 * airTemp * ((0.3965 * airTemp) - 11.37) * (windSpeed ** 0.16))).toFixed(2);
+// const calculateWindChill = (airTemp, windSpeed) => (13.12 + (0.6215 * airTemp * ((0.3965 * airTemp) - 11.37) * (windSpeed ** 0.16)));
+
+if (airTemp <= 10 && windSpeed > 4.8)
+{
+    // .toFixed() returns a string.
+    document.querySelector("#windChill").innerHTML = calculateWindChill(airTemp, windSpeed) + " C";
+}
+else
+{
+    document.querySelector("#windChill").innerHTML = "N/A";
+}

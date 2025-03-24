@@ -20,27 +20,55 @@
         </header>
         <main>
             <picture>
-                <source class="hero-wide" srcset="images/fuji-tower-medium-wide.webp" media="min-width: 900px">
-                <img class="hero-narrow" srcset="images/fuji-tower-small.webp" alt="Mt Fuji and tower" width="303" height="427">
+                <source class="hero-wide" srcset="images/fuji-tower-medium-wide.webp" media="(min-width: 600px)">
+                <img class="hero-narrow" src="images/fuji-tower-small.webp" alt="Mt Fuji and tower" width="303" height="427">
             </picture>
-            <h2>Data</h2>
-            <p>
-                Area: 377,975 square km<br>
-                Population: 123,283,771<br>
-                Capital: Tokyo<br>
-                Languages: Japanese<br>
-                Currency: En<br>
-                Time Zone: UTC+9<br>
-                Calling Code: +81
-            </p>
-            <h2>Weather</h2>
-            <img class="weather-icon" src="images/weather-icon.svg" alt="weather icon svg">
-            <p>
-                Temperature: 7 C<br>
-                Conditions: ___<br>
-                Wind: 6 km/h<br>
-                Wind Chill: <span id="windchill"></span>
-            </p>
+            <section class="data">
+                <h2>Data</h2>
+                <div class="left-column">
+                    <p>
+                        Area: <br>
+                        Population: <br>
+                        Capital: <br>
+                        Languages: <br>
+                        Currency: <br>
+                        Time Zone: <br>
+                        Calling Code: 
+                    </p>
+                </div>
+                <div class="right-column">
+                    <p>
+                        377,975 square km<br>
+                        123,283,771<br>
+                        Tokyo<br>
+                        Japanese<br>
+                        En<br>
+                        UTC+9<br>
+                        +81
+                    </p>
+                </div>
+            </section>
+            <section class="weather">
+                <h2>Weather</h2>
+                <img class="weather-icon" src="images/weather-icon.svg" alt="weather icon svg">
+                <p class="emoticon">⛅</p>
+                <div class="left-column">
+                    <p>
+                        Temperature: <br>
+                        Conditions: <br>
+                        Wind: <br>
+                        Wind Chill:  
+                    </p>
+                </div>
+                <div class="right-column">
+                    <p>
+                        7 C<br>
+                        Partly Cloudy<br>
+                        6 km/h<br>
+                        <span id="windChill"></span>
+                    </p>
+                </div>
+            </section>
         </main>
         <footer>
             <!-- change text by Javascript -->

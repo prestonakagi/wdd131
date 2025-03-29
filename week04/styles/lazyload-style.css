@@ -1,0 +1,30 @@
+main, footer {
+    max-width: 400px;
+    /* automatically center on the screen horizontally */
+    margin: 0 auto;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    display: block;
+    justify-self: center;
+    background-color: black;
+    animation: fade 5s;
+}
+
+/* Part of "add a fade from black animation to each image 
+using CSS animation and opacity." */
+@keyframes fade {
+    0% {
+        opacity: 0; /* not show */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

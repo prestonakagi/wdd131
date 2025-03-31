@@ -151,18 +151,106 @@ temples.forEach(tempObj => {
     imageUrls.push(tempObj.imageUrl);
 });
 
-// card HTML example:
-// <div class="card">
-// <div class="container">
-// <h3><b>John Doe</b></h3>
-// <p>Architect & Engineer</p>
-// </div>
-// <img src="img_avatar.png" alt="Avatar">
-// </div>
+const dedicatedYears = [2005, 1888, 2015, 2020, 1974, 1986, 1983, 2009, 1980, 1983];
 
 
 // select the DOM element for card_ id
 const card1 = document.getElementById("card1");
+const card2 = document.getElementById("card2");
+const card3 = document.getElementById("card3");
+const card4 = document.getElementById("card4");
+const card5 = document.getElementById("card5");
+const card6 = document.getElementById("card6");
+const card7 = document.getElementById("card7");
+const card8 = document.getElementById("card8");
+const card9 = document.getElementById("card9");
+const card10 = document.getElementById("card10");
+let cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10];
 
-// TODO: how can use a loop to fill in the .innerHTML values?
-card1.innerHTML = document.lastModified; // NEED CHANGE VALUE
+// value is string with all the tags and text, use template literals ` ` for multiple lines.
+for (let i = 0; i < cards.length; i++) {
+  cards[i].innerHTML = `
+  <div class="card">
+  <div class="container">
+  <h3><b>${templeNames[i]}</b></h3>
+  <p>
+  Location: ${locations[i]}<br>
+  Dedicated: ${dedicatedDates[i]}<br>
+  Size: ${areas[i]} sq ft
+  </p>
+  </div>
+  <img src="${imageUrls[i]}" alt="${templeNames[i]} Temple" loading="lazy">
+  </div>
+  `;
+}
+
+
+// filtering helps select index(es) and filtering creates an array,
+// then loop thru that array.
+
+function getAllIndexes(array, arrowCondition) {
+  const indexes = [];
+  for (let i = 0; i < array.length; i++) {
+    if (arrowCondition(array[i])) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
+}
+
+// console.log(dedicatedDates);
+// const testConditionedArray = getAllIndexes(dedicatedYears, value => value < 1900);
+// console.log(testConditionedArray);
+// console.log(testConditionedArray[0]);
+
+function createFilteredTempleCards(listToFilter, arrowCondition) {
+  for (let i = 0; i < filteredArrayIndexes.length; i++) {
+    cards[i].innerHTML = ``;
+  }
+
+  // let filteredArray = listToFilter.filter(arrowCondition);
+  // let toUseIndexes = [];
+  // let counter = 0;
+  // for (let j = 0; j < listToFilter.length; j++) {
+  //   if (filteredArray[counter] === listToFilter[j]) {
+  //     toUseIndexes.push(j);
+  //     counter += 1;
+  //   }
+  //   else {
+  //     counter += 1;
+  //   }
+  // }
+
+  let filteredArrayIndexes = getAllIndexes(listToFilter, arrowCondition);
+
+  for (let i = 0; i < filteredArrayIndexes.length; i++) {
+    cards[i].innerHTML = `
+    <div class="card">
+    <div class="container">
+    <h3><b>${templeNames[i]}</b></h3>
+    <p>
+    Location: ${locations[i]}<br>
+    Dedicated: ${dedicatedDates[i]}<br>
+    Size: ${areas[i]} sq ft
+    </p>
+    </div>
+    <img src="${imageUrls[i]}" alt="${templeNames[i]} Temple" loading="lazy">
+    </div>
+    `;
+  }
+}
+
+// DOM event click response effect on nav menu options.
+
+const oldLink = document.getElementById('old');
+oldLink.addEventListener('click', () => {
+  createFilteredTempleCards(dedicatedDates, value => value < 1900)
+});
+
+// const hamButton = document.querySelector('#menu');
+// const navigation = document.querySelector('.navigation');
+
+// hamButton.addEventListener('click', () => {
+//     navigation.classList.toggle('show');
+//     hamButton.classList.toggle('show');
+// });

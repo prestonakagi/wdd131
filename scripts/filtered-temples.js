@@ -233,6 +233,15 @@ console.log(testConditionedArray[0]);
 //  cardsGrid.appendChild(divCard);
 
 
+// could try following recommendation from Microsoft Teams:
+// use querySelectorAll() to select all navigation buttons at once 
+// and proceed with if else condition to address each buttons event. 
+// Don't forget when you use querySelectorAll() to use a data-filter attribute 
+// on the html button element in your case the <li data-filter="old"> the same for others.
+
+// to change the string of a date to a Date obj, then get the full year so can use in condition
+// new Date(temple.dedicated).getFullYear() < 1900
+
 function createFilteredTempleCards(listToFilter, arrowCondition) {
   // document.querySelector(".cards-grid").innerHTML = ""; // dots are classes!! # are ids!!
 
@@ -279,6 +288,13 @@ function createFilteredTempleCards(listToFilter, arrowCondition) {
   }
 };
 
+// when page first loads
+createFilteredTempleCards(dedicatedYears, value => value > 1);
+
+// filtered example
+// const filtered = employees.filter(e => e.sal >= 20000)
+// console.log(filtered);
+
 // DOM event click response effect on nav menu options.
 
 const homeLink = document.getElementById('home');
@@ -288,8 +304,11 @@ homeLink.addEventListener('click', () => {
 
 const oldLink = document.getElementById('old');
 oldLink.addEventListener('click', () => {
-  createFilteredTempleCards(dedicatedYears, value => value < 1900);
-});
+
+})
+// oldLink.addEventListener('click', () => {
+//   createFilteredTempleCards(dedicatedYears, value => value < 1900);
+// });
 
 // const hamButton = document.querySelector('#menu');
 // const navigation = document.querySelector('.navigation');

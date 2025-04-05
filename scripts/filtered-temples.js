@@ -288,8 +288,62 @@ function createFilteredTempleCards(listToFilter, arrowCondition) {
   }
 };
 
+
+// use array.methods().
+
+function createTempleCards(filteredTemples) {
+  // document.querySelector(".cards-grid").innerHTML = ""; // dots are classes!! # are ids!!
+
+  // let filteredArray = listToFilter.filter(arrowCondition);
+  // let toUseIndexes = [];
+  // let counter = 0;
+  // for (let j = 0; j < listToFilter.length; j++) {
+  //   if (filteredArray[counter] === listToFilter[j]) {
+  //     toUseIndexes.push(j);
+  //     counter += 1;
+  //   }
+  //   else {
+  //     counter += 1;
+  //   }
+  // }
+
+  let cardsGrid = document.querySelector(".cards-grid");
+
+  while (cardsGrid.firstChild) {
+      cardsGrid.removeChild(cardsGrid.firstChild);
+    }
+  
+  // // condition example is new Date(temple.dedicated).getFullYear() < 1900 or temple.area > 90000
+  // let filteredTemples = temples.filter((temple) => temple.attributeAndCondition);
+
+  filteredTemples.forEach(function(temple) {
+    // make a new <div class="card">
+    let divCard = document.createElement('div');
+    divCard.className = "card";
+    // set innerHTML to temple info
+    divCard.innerHTML = `
+    <div class="container">
+    <h3><b>${temple.templeName}</b></h3>
+    <p>
+    Location: ${temple.location}<br>
+    Dedicated: ${temple.dedicated}<br>
+    Size: ${temple.area} sq ft
+    </p>
+    </div>
+    <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+    `;
+    // append divCard to parent of cardsGrid
+    console.log(divCard);
+    cardsGrid.appendChild(divCard);
+})
+};
+
+
+
 // when page first loads
-createFilteredTempleCards(dedicatedYears, value => value > 1);
+// createFilteredTempleCards(dedicatedYears, value => value > 1);
+const showAll = temples.filter((temple) => new Date(temple.dedicated).getFullYear() > 1);
+createTempleCards(showAll);
 
 // filtered example
 // const filtered = employees.filter(e => e.sal >= 20000)
@@ -299,12 +353,13 @@ createFilteredTempleCards(dedicatedYears, value => value > 1);
 
 const homeLink = document.getElementById('home');
 homeLink.addEventListener('click', () => {
-  createFilteredTempleCards(dedicatedYears, value => value > 1);
+  createTempleCards(showAll);
 });
 
+const oldFilteredTemples = temples.filter((temple) => new Date(temple.dedicated).getFullYear() < 1900);
 const oldLink = document.getElementById('old');
 oldLink.addEventListener('click', () => {
-
+  createTempleCards(oldFilteredTemples);
 })
 // oldLink.addEventListener('click', () => {
 //   createFilteredTempleCards(dedicatedYears, value => value < 1900);

@@ -339,16 +339,6 @@ function createTempleCards(filteredTemples) {
 };
 
 
-
-// when page first loads
-// createFilteredTempleCards(dedicatedYears, value => value > 1);
-const showAll = temples.filter((temple) => new Date(temple.dedicated).getFullYear() > 1);
-createTempleCards(showAll);
-
-// filtered example
-// const filtered = employees.filter(e => e.sal >= 20000)
-// console.log(filtered);
-
 // DOM event click response effect on nav menu options.
 
 const homeLink = document.getElementById('home');
@@ -361,6 +351,32 @@ const oldLink = document.getElementById('old');
 oldLink.addEventListener('click', () => {
   createTempleCards(oldFilteredTemples);
 })
+
+const newFilteredTemples = temples.filter((temple) => new Date(temple.dedicated).getFullYear() > 2000);
+const newLink = document.getElementById('new');
+newLink.addEventListener('click', () => {
+  createTempleCards(newFilteredTemples);
+})
+
+const largeFilteredTemples = temples.filter((temple) => temple.area > 90000);
+const largeLink = document.getElementById('large');
+largeLink.addEventListener('click', () => {
+  createTempleCards(largeFilteredTemples);
+})
+
+const smallFilteredTemples = temples.filter((temple) => temple.area < 10000);
+const smallLink = document.getElementById('small');
+smallLink.addEventListener('click', () => {
+  createTempleCards(smallFilteredTemples);
+})
+
+
+// when page first loads
+// createFilteredTempleCards(dedicatedYears, value => value > 1);
+const showAll = temples.filter((temple) => new Date(temple.dedicated).getFullYear() > 1);
+createTempleCards(showAll);
+
+
 // oldLink.addEventListener('click', () => {
 //   createFilteredTempleCards(dedicatedYears, value => value < 1900);
 // });

@@ -57,7 +57,7 @@ figcaption, p {
     content: "X";
 }
 
-.navigation a {
+.navigation button {
     display: block;
     padding: 1rem;
     text-decoration: none;
@@ -66,7 +66,7 @@ figcaption, p {
     color: black;
 }
 
-.navigation a:hover {
+.navigation button:hover {
     /* different background color (and text color) or border (different colored) */
     background-color: var(--secondary-color);
 }

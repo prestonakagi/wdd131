@@ -1,0 +1,132 @@
+:root {
+    --primary-color: rgb(152, 0, 0);
+    --secondary-color: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* h1 font or maybe other headings (h2) also */
+h1 {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+/* normal paragraph font */
+/* p { */
+    /* font-family: "Source Sans 3", serif; This font was a custom made font. */
+    /* font-weight: 350; */
+    /* font-style: normal; */
+    /* color: black; */
+    /* padding: 10px; */
+/* } */
+
+body {
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+label, p, h2, .feat1, .feat2, .feat3, .feat4, button {
+    padding-top: 1rem;
+}
+
+.top-label {
+    padding-bottom: 0.25rem;
+}
+
+.radio {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+
+.radio label {
+    grid-row: 1 / 2;
+    grid-template-columns: 1 / 6;
+}
+
+.radio input {
+    grid-row: 2 / 3;
+    grid-template-columns: 1 / 6;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.checkbox input {
+    grid-row: 1 / 5;
+}
+
+.form input[type="date"],
+.form input[type="text"],
+.form select,
+.form textarea {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 6px;
+    padding: 1rem;
+    color: gray;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input[type="checkbox"] {
+    margin-right: 6px;
+    height: 15px;
+    width: 15px;
+}
+
+.form input[type="radio"] {
+    height: 22px;
+    width: 22px;
+}
+
+.form input[type="submit"] {
+    background-color: lightgreen;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 99%;
+    max-width: 400px;
+    margin: 1rem 1% 2rem 0;
+}
+
+.form input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    max-width: 1000px;
+    /* automatically center on the screen horizontally */
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--primary-color);
+    /* padding-top: 1rem; */
+}
+
+footer p {
+    color: white;
+}

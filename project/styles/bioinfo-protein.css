@@ -1,0 +1,48 @@
+/* One CSS file for small and large (media query) */
+/* Japan colors = red, (white), (another color?) */
+
+/* declaring global variables --variable-name: value;
+calling variable use var(variable-name) */
+:root {
+    --primary-color: lightgreen;
+    --secondary-color: rgb(75, 75, 245);
+    --text-color1: rgb(49, 49, 49);
+    --text-color2: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* h1 font or maybe other headings (h2) also */
+h1 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    /* color: black; */
+    color: var(--text-color2);
+    /* color: var(--text-color1); */
+    border-bottom: 2px solid white;
+}
+
+h2 {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* color: black; */
+    color: var(--text-color2);
+    /* color: var(--text-color1); */
+    padding: 10px;
+}
+
+/* normal paragraph font */
+p {
+    font-family: "Source Sans 3", serif; /* This font was a custom made font. */
+    font-weight: 350;
+    font-style: normal;
+    color: black;
+    /* color: var(--text-color1); */
+    padding: 10px;
+}

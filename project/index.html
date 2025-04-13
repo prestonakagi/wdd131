@@ -28,6 +28,32 @@
         </header>
         <main>
             <h1>Bioinformatics Protein: Shaped Functionality</h1>
+            <div class="index-grid">
+                <p>~ bioinfo for proteins intro, and protein 3D shape confers reactivity intro and changes in a.a. sequence. ~</p>
+                <img class="top-img" src="images/orange-protein.webp" alt="orange protein" loading="lazy">
+                <img class="bottom-img" src="images/three-arm-protein.webp" alt="three arm protein" loading="lazy">
+
+                <!-- try eventlistener submit to pull up a little "window" at top of screen (can't remember what it is called) and inform their questions have been sent. -->
+                <form class="form" method="get" id="form">
+
+                    <h2>Have Questions?</h2>
+
+                    <label class="top-label" for="user-name" required>Name</label>
+                    <input type="text" id="user-name" name="user-name">
+
+                    <label class="top-label" for="user-email" required>Email</label>
+                    <input type="email" id="user-email" name="user-email">
+
+                    <label for="phone">Phone xxx-xxx-xxxx (Optional)</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+                    <label class="top-label" for="questions" required>Questions about bioinformatics and/or careers in bioinformatics</label>
+                    <textarea id="questions" name="questions" rows="10"></textarea>  <!-- need add attribute cols? -->
+
+                    <input type="submit" id="submit" value="Send Questions">
+                
+                </form>
+            </div>
         </main>
         <footer>
             <!-- change text by Javascript -->

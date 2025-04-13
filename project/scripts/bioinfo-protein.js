@@ -33,3 +33,7 @@ hamButton.addEventListener('click', () => {
     navigation.classList.toggle('show');
     hamButton.classList.toggle('show');
 });
+
+
+// function to make li elements (to put in the ul element in each not-index page)
+

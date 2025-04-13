@@ -29,7 +29,11 @@ h1 {
     border-bottom: 2px solid white;
     background-color: var(--secondary-color); /* just so can see when developing */
     padding-bottom: 10px;
+    padding-top: 10px;
     text-align: center;
+    max-width: 425px;
+    width: 100%;
+    justify-self: center;
 }
 
 h2, .navigation a {
@@ -121,6 +125,129 @@ footer {
     text-align: center;
 }
 
+/* Index page small*/
+
+.index-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.index-grid p {
+    width: 425px;
+}
+
+.top-img {
+    width: 425px;
+    height: auto;
+}
+
+.bottom-img {
+    width: 425px;
+    height: auto;
+}
+
+.form {
+    background-color: antiquewhite;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 425px;
+}
+
+.form h2 {
+    color: var(--text-color1);
+    /* text-decoration: underline; */
+    text-align: center;
+}
+
+label {
+    padding-top: 1rem;
+}
+
+.top-label {
+    padding-bottom: 0.25rem;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form textarea {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 6px;
+    padding: 1rem;
+    color: gray;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 99%;
+    max-width: 400px;
+    margin: 1rem 1% 2rem 0;
+}
+
+.form input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+}
+
+/* Drug Discovery Page small */
+
+.content-grid-dd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.card {
+    border: solid 1px var(--text-color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 425px;
+    width: 100%;
+}
+
+/* .card1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.card2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+} */
+
+.img-card1 {
+    align-self: center;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+}
+
+.img-card2 {
+    align-self: center;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+}
+
+.list-companies {
+    border: solid 1px var(--text-color1);
+    padding: 20px;
+    max-width: 425px;
+    width: 100%;
+}
 
 
 @media screen and (min-width: 600px) {
@@ -187,11 +314,159 @@ footer {
         background-color: var(--secondary-color);
     }
 
+    h1 {
+        max-width: 2000px;
+    }
+
     footer {
         background-color: var(--primary-color);
         max-width: 100%;
         /* automatically center on the screen horizontally */
         margin: 0 auto;
         text-align: center;
+    }
+
+    /* Index page */
+    
+    .index-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .index-grid p {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .top-img {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: center;
+        width: 200px;
+        height: auto;
+    }
+
+    .bottom-img {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+        width: 200px;
+        height: auto;
+    }
+
+    .form {
+        grid-row: 1 / 3;
+        grid-column: 3 / 4;
+        background-color: antiquewhite;
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        max-width: 425px;
+    }
+
+    .form h2 {
+        color: var(--text-color1);
+        /* text-decoration: underline; */
+        text-align: center;
+    }
+
+    label {
+        padding-top: 1rem;
+    }
+
+    .top-label {
+        padding-bottom: 0.25rem;
+    }
+
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="tel"],
+    .form textarea {
+        background-color: white;
+        border: solid 1px gray;
+        border-radius: 6px;
+        padding: 1rem;
+        color: gray;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .form input[type="submit"] {
+        background-color: var(--secondary-color);
+        color: var(--text-color2);
+        border: none;
+        border-radius: 6px;
+        padding: 1rem;
+        width: 99%;
+        max-width: 400px;
+        margin: 1rem 1% 2rem 0;
+    }
+    
+    .form input[type="submit"]:hover {
+        background-color: var(--primary-color);
+        color: var(--text-color1);
+    }
+
+    /* Drug Discovery Page */
+
+    .content-grid-dd {
+        display: grid;
+        grid-template-rows: 1fr 10px;
+        grid-template-columns: 1fr 1fr 0.5fr;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .card {
+        border: solid 1px var(--text-color1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .card1 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    .card2 {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    .img-card1 {
+        align-self: center;
+        width: 200px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .img-card2 {
+        align-self: center;
+        width: 400px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .list-companies {
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+        border: solid 1px var(--text-color1);
+        padding: 20px;
+    }
+
+    /* Bioinformatics Software Page */
+
+    .biopython-img {
+        width: 200px;
+        height: auto;
+    }
+
+    .pymol-img {
+        width: 200px;
+        height: auto;
     }
 }

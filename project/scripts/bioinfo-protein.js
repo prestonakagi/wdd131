@@ -37,3 +37,53 @@ hamButton.addEventListener('click', () => {
 
 // function to make li elements (to put in the ul element in each not-index page)
 
+
+const listsNeed = {
+    companies: ["Recursion", "Illumina", "Agilent Technologies", "Verge Genomics", "Insilico Medicine"],
+    software: ["BLAST (Basic Local Alignment Search Tool)", "MAFFT (Multiple Alignment using Fast Fourier Transform)", "AutoDock", "GROMACS", "BioPython", "BioPerl", "PyMol", "R"]
+}
+
+// populate companies ul with li elements
+let ulCompanies = document.querySelector(".list-companies");
+
+// function to create li element
+const createAddLiElement = function (ulAddTo, infoString) {
+    let liCompany = document.createElement("li");
+    liCompany.innerText = infoString;
+    ulAddTo.appendChild(liCompany);
+}
+
+listsNeed.companies.forEach(company => createAddLiElement(ulCompanies, company));
+// I think it is  .forEach(variableOfCurrentElementInArray => userMadeFunction(userArg1, userArg2= variableOfCurrentElementInArray))
+
+// populate software ul with li elements
+// let ulSoftware = document.querySelector(".list-software");
+let ulSoftware = document.getElementsByClassName("list-software");
+
+// TODO: this foreach not working 4-13-25 10 pm, but the above one for companies does!!
+listsNeed.software.forEach(oneSoftware => createAddLiElement(ulSoftware, oneSoftware));
+
+
+// test saving to and retrieving from localStorage with simple case.
+// Save a number to localStorage
+let numberToSave = 42;
+localStorage.setItem(`myNumber`, numberToSave);
+
+// Retrieve the number from localStorage
+let retrievedNumber = localStorage.getItem(`myNumber`);
+retrievedNumber = Number(retrievedNumber); // Convert the string back to a number.
+console.log(retrievedNumber);
+
+// save textarea value (question) to localStorage
+
+document.getElementById("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent the default form submission
+
+    // get textarea value
+    let textareaValue = document.getElementById("questions").value;
+
+    localStorage.setItem(`textareaEntry`, textareaValue);
+
+    // alert user questions have been sent
+    alert(`Your questions have been sent!`);
+})

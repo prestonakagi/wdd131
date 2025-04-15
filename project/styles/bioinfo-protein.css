@@ -48,7 +48,7 @@ h2, .navigation a {
 }
 
 /* normal paragraph font */
-p {
+p, .list-companies li, .list-software li {
     font-family: "Source Sans 3", serif; /* This font was a custom made font. */
     font-weight: 350;
     font-style: normal;
@@ -250,6 +250,11 @@ label {
     padding: 20px;
     max-width: 425px;
     width: 100%;
+}
+
+.list-companies h2, .list-software h2 {
+    color: var(--text-color1);
+    text-align: center;
 }
 
 /* Bioinformatics Software Page small */

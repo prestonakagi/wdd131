@@ -39,8 +39,8 @@ hamButton.addEventListener('click', () => {
 
 
 const listsNeed = {
-    companies: ["Recursion", "Illumina", "Agilent Technologies", "Verge Genomics", "Insilico Medicine"],
-    software: ["BLAST (Basic Local Alignment Search Tool)", "MAFFT (Multiple Alignment using Fast Fourier Transform)", "AutoDock", "GROMACS", "BioPython", "BioPerl", "PyMol", "R"]
+    companies: [`Recursion`, `Illumina`, `Agilent Technologies`, `Verge Genomics`, `Insilico Medicine`],
+    software: [`BLAST (Basic Local Alignment Search Tool)`, `MAFFT (Multiple Alignment using Fast Fourier Transform)`, `AutoDock`, `GROMACS`, `BioPython`, `BioPerl`, `PyMol`, `R`]
 }
 
 // populate companies ul with li elements
@@ -56,23 +56,35 @@ const createAddLiElement = function (ulAddTo, infoString) {
 listsNeed.companies.forEach(company => createAddLiElement(ulCompanies, company));
 // I think it is  .forEach(variableOfCurrentElementInArray => userMadeFunction(userArg1, userArg2= variableOfCurrentElementInArray))
 
-// populate software ul with li elements
+// // populate software ul with li elements
 // let ulSoftware = document.querySelector(".list-software");
-let ulSoftware = document.getElementsByClassName("list-software");
+// // let ulSoftware = document.getElementsByClassName("list-software");
 
-// TODO: this foreach not working 4-13-25 10 pm, but the above one for companies does!!
-listsNeed.software.forEach(oneSoftware => createAddLiElement(ulSoftware, oneSoftware));
+// // TODO: this foreach not working 4-13-25 10 pm, but the above one for companies does!!
+// listsNeed.software.forEach(oneSoftware => createAddLiElement(ulSoftware, oneSoftware));
+
+
+let ulSoft = document.querySelector(".list-software");
+listsNeed.software.forEach(function(oneSoftware) {
+    let liSoft = document.createElement("li");
+    liSoft.innerText = oneSoftware;
+    ulSoft.appendChild(liSoft)
+});
 
 
 // test saving to and retrieving from localStorage with simple case.
 // Save a number to localStorage
 let numberToSave = 42;
 localStorage.setItem(`myNumber`, numberToSave);
+let stringToSave = `hello`;
+localStorage.setItem(`myString`, stringToSave);
 
 // Retrieve the number from localStorage
 let retrievedNumber = localStorage.getItem(`myNumber`);
 retrievedNumber = Number(retrievedNumber); // Convert the string back to a number.
 console.log(retrievedNumber);
+let retrievedString = localStorage.getItem(`myString`);
+console.log(retrievedString);
 
 // save textarea value (question) to localStorage
 

@@ -15,9 +15,34 @@ year.innerText = currentYear
 // select the DOM element for last modified output
 const lastMod = document.getElementById("lastModified");
 
+let day = ``;
+
+switch (new Date().getDay()) {
+    case 0:
+        day = `Sunday`;
+        break;
+    case 1:
+        day = `Monday`;
+        break;
+    case 2:
+        day = `Tuesday`;
+        break;
+    case 3:
+        day = `Wednesday`;
+        break;
+    case 4:
+        day = `Thursday`;
+        break;
+    case 5:
+        day = `Friday`;
+        break;
+    case 6:
+        day = `Saturday`;
+}
+
 // use lastModified property of document
 // default format is mm/dd/yyyy hh:mm:ss
-lastMod.innerText = document.lastModified;
+lastMod.innerText = `${day} ${document.lastModified}`;
 
 
 // responsive hamburger effect on nav menu.
@@ -68,7 +93,7 @@ let ulSoft = document.querySelector(".list-software");
 listsNeed.software.forEach(function(oneSoftware) {
     let liSoft = document.createElement("li");
     liSoft.innerText = oneSoftware;
-    ulSoft.appendChild(liSoft)
+    ulSoft.appendChild(liSoft);
 });
 
 

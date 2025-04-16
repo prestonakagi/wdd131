@@ -513,7 +513,6 @@ label {
         grid-row: 1 / 2;
         max-width: var(--software-image-large-width);
         width: 100%;
-        border: solid 1px var(--text-color1);
         word-wrap: break-word;
     }
 

@@ -101,7 +101,7 @@ listsNeed.software.forEach(function(oneSoftware) {
 // Save a number to localStorage
 let numberToSave = 42;
 localStorage.setItem(`myNumber`, numberToSave);
-let stringToSave = `hello`;
+let stringToSave = `I wanted to save questions entered in textarea, but it did not save them!`;
 localStorage.setItem(`myString`, stringToSave);
 
 // Retrieve the number from localStorage
@@ -113,11 +113,12 @@ console.log(retrievedString);
 
 // save textarea value (question) to localStorage
 
-document.getElementById("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // prevent the default form submission
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent the default form submission
 
     // get textarea value
-    let textareaValue = document.getElementById("questions").value;
+    const textareaValue = document.getElementById("questions").value;
+    console.log(textareaValue);
 
     localStorage.setItem(`textareaEntry`, textareaValue);
 
